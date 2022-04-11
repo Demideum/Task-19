@@ -1,0 +1,36 @@
+namespace IJunior_Task19
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            var text = Console.ReadLine();
+
+            var countSymbols = 0;
+            var maxDepthText = 0;
+
+            for (var i = 0; i < text.Length; i++)
+            {
+                if (text[i] == '(')
+                {
+                    if (maxDepthText < ++countSymbols)
+                    {
+                        maxDepthText = countSymbols;
+                    }
+                }
+                else if (text[i] == ')')
+                {
+                    countSymbols--;
+                }
+            }
+            if (countSymbols == 0)
+            {
+                Console.WriteLine($"Строка корректная и максимум глубины равняется {maxDepthText}");
+            }
+            else
+            {
+                Console.WriteLine("Ошибка! Не корректная строка!");
+            }
+        }
+    }
+}
