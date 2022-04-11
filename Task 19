@@ -21,6 +21,11 @@ namespace IJunior_Task19
                 else if (text[i] == ')')
                 {
                     countSymbols--;
+
+                    if (countSymbols < 0)
+                    {
+                        break;
+                    }
                 }
             }
             if (countSymbols == 0)
